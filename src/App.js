@@ -1,9 +1,14 @@
+import React from "react";
 import "./App.css";
 
-import React from "react";
+import Button from "./components/Button/Button";
 
-function App() {
-  return <div className="App">Picos App</div>;
-}
+const App = () => {
+	return (
+
+		<Button>Confirm</Button>
+
+	);
+};
 
 export default App;
