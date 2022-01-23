@@ -8,8 +8,10 @@ const App = () => {
 
 		<>
 			<main role="main">
-			
-				<ProposalForm />
+				
+				<div className="form">
+					<ProposalForm />
+				</div>
 
 			</main>
 		</>

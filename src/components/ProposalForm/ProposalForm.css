@@ -1,0 +1,9 @@
+.form-proposal {
+	max-width: 500px;
+	border: 1px solid #eee;
+	padding: 2rem;
+}
+
+.form-proposal--align-center {
+	margin: 0 auto;
+}

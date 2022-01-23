@@ -9,17 +9,21 @@ const ProposalForm = () => {
 	return (
 
 		<>
-			<TextField 
-				label="Proposal title" 
-				name="proposalTitle" 
-			/>
+			<div className="form-proposal form-proposal--align-center">
+				<form>
+					<TextField 
+						label="Proposal title" 
+						name="proposalTitle" 
+					/>
 
-			<TextArea 
-				label="Proposal summary" 
-				name="proposalSummary" 
-			/>
+					<TextArea 
+						label="Proposal summary" 
+						name="proposalSummary" 
+					/>
 
-			<Button>Submit</Button>
+					<Button>Submit</Button>
+				</form>
+			</div>
 		</>
 
 	);
