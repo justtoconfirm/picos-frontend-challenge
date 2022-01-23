@@ -1,6 +1,6 @@
-import "./Dropdown.css";
-
 import React, { useCallback } from "react";
+
+import "./Dropdown.css";
 
 const Dropdown = ({
   label,

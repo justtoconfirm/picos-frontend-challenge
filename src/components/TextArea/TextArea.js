@@ -1,6 +1,6 @@
-import "./TextArea.css";
-
 import React, { useCallback } from "react";
+
+import "./TextArea.css";
 
 const TextArea = ({
   label,
