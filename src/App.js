@@ -12,8 +12,8 @@ const App = () => {
 		<>
 			<main role="main">
 			
-				<TextField />
-				<TextArea />
+				<TextField label="Proposal title" name="proposalTitle" />
+				<TextArea label="Proposal summary" name="proposalSummary" />
 				<Button>Confirm</Button>
 
 			</main>
