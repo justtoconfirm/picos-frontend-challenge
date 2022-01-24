@@ -62,12 +62,12 @@ const ProposalForm = () => {
 	};
 
 	const handleFormSubmit = () => {
-		console.log(
-			`Proposal title: ${proposalTitle}`,
-			`Proposal summary: ${proposalSummary}`,
-			`Intended network: ${proposalIntendedNetwork}`,
-			`Price per episode: ${proposalPrice}`
-		);
+		console.table([
+			['Proposal title:', proposalTitle],
+			['Proposal summary:', proposalSummary],
+			['Intended network:', proposalIntendedNetwork],
+			['Price per episode:', proposalPrice]
+		]);
 	};
 
 	return (
