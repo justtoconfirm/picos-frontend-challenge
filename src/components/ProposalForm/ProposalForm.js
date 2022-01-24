@@ -8,6 +8,11 @@ import "./ProposalForm.css";
 
 const intendedNetwork = [
 	{
+		value: 'please-select',
+		label: 'Select option...',
+		isClearable: true,
+	},
+	{
 		value: 'radio-1',
 		label: 'Radio 1'
 	},
