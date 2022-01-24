@@ -6,6 +6,7 @@ const TextField = ({
     label,
     value,
     name,
+    type = 'text',
     onChange,
     placeholder,
     disabled,
@@ -25,7 +26,7 @@ const TextField = ({
             <input
                 id={name}
                 name={name}
-                type="text"
+                type={type}
                 value={value}
                 placeholder={placeholder}
                 onChange={handleChange}

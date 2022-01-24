@@ -59,6 +59,12 @@ const ProposalForm = () => {
 						options={intendedNetwork} 
 					/>
 
+					<TextField 
+						label="Price per episode" 
+						name="proposalPrice" 
+						type="number"
+					/>
+
 					<Button>Submit</Button>
 				</form>
 			</div>
