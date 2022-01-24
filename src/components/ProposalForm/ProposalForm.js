@@ -48,10 +48,20 @@ const ProposalForm = () => {
 	const [proposalSummary, setProposalSummary] = useState("");
 	const [proposalIntendedNetwork, setProposalIntendedNetwork] = useState("");
 	const [proposalPrice, setProposalPrice] = useState("");
-	
+
+	const [error, setError] = useState("");
 
 	const handleProposalTitle = e => {
-		setProposalTitle(e.target.value);
+		const value = e.target.value;
+
+		// Field validation
+		if (value.includes("_")) {
+			setError("You cannot use an underscore");
+		} else {
+			setError(null);
+		}
+
+		setProposalTitle(value);
 	};
 
 	const handleProposalSummary = e => {
@@ -63,16 +73,27 @@ const ProposalForm = () => {
 	};
 
 	const handleProposalPrice = e => {
+		const value = e.target.value;
+
+		// Field validation
+		if (value.includes("_")) {
+			setError("You cannot use an underscore");
+		} else {
+			setError(null);
+		}
+
 		setProposalPrice(e.target.value);
 	};
 
-	const handleFormSubmit = () => {
+	const handleFormSubmit = e => {
 		console.table([
 			['Proposal title:', proposalTitle],
 			['Proposal summary:', proposalSummary],
 			['Intended network:', proposalIntendedNetwork],
 			['Price per episode:', proposalPrice]
 		]);
+
+		e.preventDefault();
 	};
 
 	return (
@@ -85,6 +106,10 @@ const ProposalForm = () => {
 						name="proposalTitle"
 						onChange={handleProposalTitle} 
 					/>
+
+					{error && (
+						<p>{error}</p>
+					)}
 
 					<TextArea 
 						label="Proposal summary" 
@@ -105,6 +130,10 @@ const ProposalForm = () => {
 						type="number"
 						onChange={handleProposalPrice}
 					/>
+
+					{error && (
+						<p>{error}</p>
+					)}
 
 					<Button onClick={handleFormSubmit}>Submit</Button>
 				</form>
