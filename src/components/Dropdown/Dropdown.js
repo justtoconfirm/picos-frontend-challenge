@@ -26,10 +26,8 @@ const Dropdown = ({
       
             <select
                 id={name}
-                name={name}
-                value={value}
+                {...{name, value, disabled}}
                 onChange={handleChange}
-                disabled={disabled}
                 {...props}
             >
                 {isClearable && (

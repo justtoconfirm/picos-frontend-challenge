@@ -24,13 +24,9 @@ const TextField = ({
             <label htmlFor={name}>{label}</label>
         
             <input
+                {...{name, type, value, placeholder, disabled}}
                 id={name}
-                name={name}
-                type={type}
-                value={value}
-                placeholder={placeholder}
                 onChange={handleChange}
-                disabled={disabled}
                 {...props}
             />
         </div>

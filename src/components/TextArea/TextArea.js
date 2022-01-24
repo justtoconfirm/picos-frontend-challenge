@@ -25,12 +25,8 @@ const TextArea = ({
             
             <textarea
                 id={name}
-                name={name}
-                value={value}
-                placeholder={placeholder}
+                {...{name, value, placeholder, rows, disabled}}
                 onChange={handleChange}
-                rows={rows}
-                disabled={disabled}
                 {...props}
             />
         </div>
