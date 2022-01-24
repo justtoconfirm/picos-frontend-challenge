@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import TextField from "./../TextField/TextField";
 import TextArea from "./../TextArea/TextArea";
 import Dropdown from "./../Dropdown/Dropdown";
@@ -38,6 +38,38 @@ const intendedNetwork = [
 ];
 
 const ProposalForm = () => {
+
+	const [proposalTitle, setProposalTitle] = useState("");
+	const [proposalSummary, setProposalSummary] = useState("");
+	const [proposalIntendedNetwork, setProposalIntendedNetwork] = useState("");
+	const [proposalPrice, setProposalPrice] = useState("");
+	
+
+	const handleProposalTitle = e => {
+		setProposalTitle(e.target.value);
+	};
+
+	const handleProposalSummary = e => {
+		setProposalSummary(e.target.value);
+	};
+
+	const handleProposalIntendedNetwork = e => {
+		setProposalIntendedNetwork(e.target.value);
+	};
+
+	const handleProposalPrice = e => {
+		setProposalPrice(e.target.value);
+	};
+
+	const handleFormSubmit = () => {
+		console.log(
+			`Proposal title: ${proposalTitle}`,
+			`Proposal summary: ${proposalSummary}`,
+			`Intended network: ${proposalIntendedNetwork}`,
+			`Price per episode: ${proposalPrice}`
+		);
+	};
+
 	return (
 
 		<>
@@ -45,27 +77,31 @@ const ProposalForm = () => {
 				<form>
 					<TextField 
 						label="Proposal title" 
-						name="proposalTitle" 
+						name="proposalTitle"
+						onChange={handleProposalTitle} 
 					/>
 
 					<TextArea 
 						label="Proposal summary" 
 						name="proposalSummary" 
+						onChange={handleProposalSummary}
 					/>
 
 					<Dropdown 
 						label="Intended network"
 						name="proposalIntendedNetwork"
 						options={intendedNetwork} 
+						onChange={handleProposalIntendedNetwork}
 					/>
 
 					<TextField 
 						label="Price per episode" 
 						name="proposalPrice" 
 						type="number"
+						onChange={handleProposalPrice}
 					/>
 
-					<Button>Submit</Button>
+					<Button onClick={handleFormSubmit}>Submit</Button>
 				</form>
 			</div>
 		</>
