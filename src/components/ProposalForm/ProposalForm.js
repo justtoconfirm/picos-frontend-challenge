@@ -104,6 +104,7 @@ const ProposalForm = () => {
 					<TextField 
 						label="Proposal title" 
 						name="proposalTitle"
+						value={proposalTitle}
 						onChange={handleProposalTitle} 
 					/>
 
@@ -113,7 +114,8 @@ const ProposalForm = () => {
 
 					<TextArea 
 						label="Proposal summary" 
-						name="proposalSummary" 
+						name="proposalSummary"
+						value={proposalSummary} 
 						onChange={handleProposalSummary}
 					/>
 
@@ -121,6 +123,7 @@ const ProposalForm = () => {
 						label="Intended network"
 						name="proposalIntendedNetwork"
 						options={intendedNetwork} 
+						value={proposalIntendedNetwork}
 						onChange={handleProposalIntendedNetwork}
 					/>
 
@@ -128,6 +131,7 @@ const ProposalForm = () => {
 						label="Price per episode" 
 						name="proposalPrice" 
 						type="number"
+						value={proposalPrice}
 						onChange={handleProposalPrice}
 					/>
 
@@ -135,7 +139,12 @@ const ProposalForm = () => {
 						<p>{error}</p>
 					)}
 
-					<Button onClick={handleFormSubmit}>Submit</Button>
+					<Button 
+						disabled={!proposalTitle || !proposalSummary || !proposalIntendedNetwork || !proposalPrice} 
+						onClick={handleFormSubmit}
+					>
+						Submit
+					</Button>
 				</form>
 			</div>
 		</>

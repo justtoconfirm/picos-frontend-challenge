@@ -10,6 +10,7 @@ const Button = props => {
 		onClick,
 		children,
 		url = '',
+		disabled,
 	} = props;
 
 	// Check if the component has the url prop value that match with this list so a link can render as a link
@@ -19,7 +20,7 @@ const Button = props => {
 		<a href={url} role="button">{ children }</a>
 
 	const renderAsButton = () =>
-		<button {...{type, onClick}}>{ children }</button>
+		<button {...{type, onClick, disabled}}>{ children }</button>
 
 	return (
 
