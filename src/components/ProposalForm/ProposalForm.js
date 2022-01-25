@@ -9,19 +9,19 @@ import "./ProposalForm.css";
 const initialValues = {
   	proposalTitle: {
     	value: "",
-    	error: null,
+    	message: null,
   	},
   	proposalSummary: {
     	value: "",
-    	error: null,
+    	message: null,
   	},
   	proposalIntendedNetwork: {
     	value: "",
-    	error: null,
+    	message: null,
   	},
   	proposalPrice: {
     	value: "",
-    	error: null,
+    	message: null,
   	},
 };
 
@@ -66,22 +66,28 @@ const ProposalForm = () => {
 	const [formData, setFormData] = useState("");
 
 	const handleProposalTitle = e => {
+		const value = e.target.value;
+
 		setFormData((prevState) => {
 			return {
 				...prevState,
 				proposalTitle: {
-					value: e.target.value
+					value: e.target.value,
+					message: value.includes("_") ? "You cannot use an underscore" : false,
 				},
 			};
 		});
 	};
 
 	const handleProposalSummary = e => {
+		const value = e.target.value;
+
 		setFormData((prevState) => {
 			return {
 				...prevState,
 				proposalSummary: {
-					value: e.target.value
+					value: e.target.value,
+					message: e.target.value.length < 15 ? "Enter at least 15 characters" : false,
 				},
 			};
 		});
@@ -92,7 +98,8 @@ const ProposalForm = () => {
 			return {
 				...prevState,
 				proposalIntendedNetwork: {
-					value: e.target.value
+					value: e.target.value,
+					message: e.target.value === "" ? "Please select an option" : false,
 				},
 			};
 		});
@@ -103,7 +110,8 @@ const ProposalForm = () => {
 			return {
 				...prevState,
 				proposalPrice: {
-					value: e.target.value
+					value: e.target.value,
+					message: Number(e.target.value) < 0 ? "Number needs to be positive" : false,
 				},
 			};
 		});
@@ -131,6 +139,7 @@ const ProposalForm = () => {
 						name="proposalTitle"
 						value={formData?.proposalTitle?.value}
 						onChange={handleProposalTitle}
+						message={formData?.proposalTitle?.message}
 					/>
 
 					<TextArea
@@ -138,6 +147,7 @@ const ProposalForm = () => {
 						name="proposalSummary"
 						value={formData?.proposalSummary?.value}
 						onChange={handleProposalSummary}
+						message={formData?.proposalSummary?.message}
 					/>
 
 					<Dropdown
@@ -146,6 +156,7 @@ const ProposalForm = () => {
 						options={intendedNetwork}
 						value={formData?.proposalIntendedNetwork?.value}
 						onChange={handleProposalIntendedNetwork}
+						message={formData?.proposalIntendedNetwork?.message}
 					/>
 
 					<TextField
@@ -154,6 +165,7 @@ const ProposalForm = () => {
 						type="number"
 						value={formData?.proposalPrice?.value}
 						onChange={handleProposalPrice}
+						message={formData?.proposalPrice?.message}
 					/>
 
 					<Button
@@ -161,7 +173,10 @@ const ProposalForm = () => {
 							!formData?.proposalTitle?.value ||
 							!formData?.proposalSummary?.value ||
 							!formData?.proposalIntendedNetwork?.value ||
-							!formData?.proposalPrice?.value
+							!formData?.proposalPrice?.value ||
+							formData?.proposalTitle?.message ||
+							formData?.proposalSummary?.message ||
+							formData?.proposalPrice?.message
 						}
 						onClick={handleFormSubmit}
 					>

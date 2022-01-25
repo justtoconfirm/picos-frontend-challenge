@@ -1,4 +1,5 @@
 import React, { useCallback } from "react";
+import Message from "../Message/Message";
 
 import "./TextField.css";
 
@@ -10,6 +11,7 @@ const TextField = ({
     onChange,
     placeholder,
     disabled,
+    message,
     ...props
 }) => {
     const handleChange = useCallback(
@@ -29,6 +31,8 @@ const TextField = ({
                 onChange={handleChange}
                 {...props}
             />
+
+            {message && <Message message={message} />}
         </div>
     );
 };
