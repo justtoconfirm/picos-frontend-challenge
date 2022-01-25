@@ -6,6 +6,25 @@ import Button from "./../Button/Button";
 
 import "./ProposalForm.css";
 
+const initialValues = {
+  	proposalTitle: {
+    	value: "",
+    	error: null,
+  	},
+  	proposalSummary: {
+    	value: "",
+    	error: null,
+  	},
+  	proposalIntendedNetwork: {
+    	value: "",
+    	error: null,
+  	},
+  	proposalPrice: {
+    	value: "",
+    	error: null,
+  	},
+};
+
 const intendedNetwork = [
 	{
 		value: "",
@@ -47,8 +66,6 @@ const ProposalForm = () => {
 	const [formData, setFormData] = useState("");
 
 	const handleProposalTitle = e => {
-		const value = e.target.value;
-
 		setFormData((prevState) => {
 			return {
 				...prevState,
@@ -60,8 +77,6 @@ const ProposalForm = () => {
 	};
 
 	const handleProposalSummary = e => {
-		const value = e.target.value;
-
 		setFormData((prevState) => {
 			return {
 				...prevState,
@@ -73,8 +88,6 @@ const ProposalForm = () => {
 	};
 
 	const handleProposalIntendedNetwork = e => {
-		const value = e.target.value;
-
 		setFormData((prevState) => {
 			return {
 				...prevState,
@@ -86,8 +99,6 @@ const ProposalForm = () => {
 	};
 
 	const handleProposalPrice = e => {
-		const value = e.target.value;
-
 		setFormData((prevState) => {
 			return {
 				...prevState,
@@ -118,12 +129,14 @@ const ProposalForm = () => {
 					<TextField
 						label="Proposal title"
 						name="proposalTitle"
+						value={formData?.proposalTitle?.value}
 						onChange={handleProposalTitle}
 					/>
 
 					<TextArea
 						label="Proposal summary"
 						name="proposalSummary"
+						value={formData?.proposalSummary?.value}
 						onChange={handleProposalSummary}
 					/>
 
@@ -131,6 +144,7 @@ const ProposalForm = () => {
 						label="Intended network"
 						name="proposalIntendedNetwork"
 						options={intendedNetwork}
+						value={formData?.proposalIntendedNetwork?.value}
 						onChange={handleProposalIntendedNetwork}
 					/>
 
@@ -138,10 +152,17 @@ const ProposalForm = () => {
 						label="Price per episode"
 						name="proposalPrice"
 						type="number"
+						value={formData?.proposalPrice?.value}
 						onChange={handleProposalPrice}
 					/>
 
 					<Button
+						disabled={
+							!formData?.proposalTitle?.value ||
+							!formData?.proposalSummary?.value ||
+							!formData?.proposalIntendedNetwork?.value ||
+							!formData?.proposalPrice?.value
+						}
 						onClick={handleFormSubmit}
 					>
 						Submit
