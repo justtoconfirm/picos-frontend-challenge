@@ -3,6 +3,7 @@ import TextField from "./../TextField/TextField";
 import TextArea from "./../TextArea/TextArea";
 import Dropdown from "./../Dropdown/Dropdown";
 import Button from "./../Button/Button";
+import Message from "./../Message/Message";
 
 import "./ProposalForm.css";
 
@@ -64,6 +65,7 @@ const intendedNetwork = [
 const ProposalForm = () => {
 
 	const [formData, setFormData] = useState("");
+	const [showSuccess, setSuccess] = useState(false);
 
 	const handleProposalTitle = e => {
 		const value = e.target.value;
@@ -126,6 +128,8 @@ const ProposalForm = () => {
 			["Proposal price:", formData?.proposalPrice?.value]
 		]);
 
+		setSuccess(true);
+
 		e.preventDefault();
 	};
 
@@ -182,6 +186,8 @@ const ProposalForm = () => {
 					>
 						Submit
 					</Button>
+
+					{showSuccess && <Message message="Success" />}
 				</form>
 			</div>
 		</>
