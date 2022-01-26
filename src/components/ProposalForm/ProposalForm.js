@@ -142,7 +142,7 @@ const ProposalForm = ({ formTitle, formCopy }) => {
 				
 				<p>{formCopy}</p>
 
-				<form>
+				<form className="form-proposal__form">
 					<TextField
 						label="Proposal title"
 						name="proposalTitle"

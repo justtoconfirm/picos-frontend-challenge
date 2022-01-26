@@ -1,9 +1,18 @@
 .form-proposal {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 	max-width: 500px;
 	border: 1px solid #eee;
-	padding: 2rem;
+	padding: 3rem;
 }
 
 .form-proposal--align-center {
 	margin: 0 auto;
+}
+
+.form-proposal__form {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 }
