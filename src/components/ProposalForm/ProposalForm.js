@@ -197,7 +197,7 @@ const ProposalForm = ({ formTitle, formCopy }) => {
 						Submit
 					</Button>
 
-					{showSuccess && <Message message="Success" />}
+					{showSuccess && <Message message="Your proposal has been successfully submitted." />}
 				</form>
 			</div>
 		</>

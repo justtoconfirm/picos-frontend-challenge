@@ -8,6 +8,10 @@ button {
   font-weight: bold;
 }
 
+button:hover {
+  opacity: 0.8;
+}
+
 button:not(:disabled) {
   cursor: pointer;
 }

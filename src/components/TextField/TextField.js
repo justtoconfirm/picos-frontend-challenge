@@ -33,7 +33,7 @@ const TextField = ({
                 {...props}
             />
 
-            {message && <Message message={message} />}
+            {message && <Message isError="true" message={message} />}
         </div>
     );
 };

@@ -3,16 +3,16 @@ import PropTypes from "prop-types";
 
 import "./Message.css";
 
-const Message = ({ message }) => {
+const Message = ({ message, isError }) => {
 	return (
 
-		<div className="message">{message}</div>
+		<div className={isError ? "message message--error" : "message message--success"}>{message}</div>
 
 	);
 };
 
 Message.propTypes = {
-    message: PropTypes.string
+    isError: PropTypes.bool
 };
 
 export default Message;

@@ -33,14 +33,14 @@ const TextArea = ({
                 {...props}
             />
 
-            {message && <Message message={message} />}
+            {message && <Message isError="true" message={message} />}
         </div>
     );
 };
 
 TextArea.propTypes = {
     label: PropTypes.string,
-    rows: PropTypes.number,
+    rows: PropTypes.string,
     value: PropTypes.string,
     name: PropTypes.string,
     onChange: PropTypes.func,
