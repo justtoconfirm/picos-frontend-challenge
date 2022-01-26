@@ -141,6 +141,7 @@ const ProposalForm = () => {
 					<TextField
 						label="Proposal title"
 						name="proposalTitle"
+						placeholder="Enter a Proposal title"
 						value={formData?.proposalTitle?.value}
 						onChange={handleProposalTitle}
 						message={formData?.proposalTitle?.message}
@@ -149,6 +150,8 @@ const ProposalForm = () => {
 					<TextArea
 						label="Proposal summary"
 						name="proposalSummary"
+						placeholder="Enter a Proposal summary"
+						rows="8"
 						value={formData?.proposalSummary?.value}
 						onChange={handleProposalSummary}
 						message={formData?.proposalSummary?.message}
@@ -166,6 +169,7 @@ const ProposalForm = () => {
 					<TextField
 						label="Price per episode"
 						name="proposalPrice"
+						placeholder="Enter a Proposal price (GDP)"
 						type="number"
 						value={formData?.proposalPrice?.value}
 						onChange={handleProposalPrice}
