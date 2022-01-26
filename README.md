@@ -4,6 +4,20 @@ We would like to gather an understanding of how you code a simple page.
 
 Picos is all about gathering information for network commissioners to select radio programmes and podcasts for broadcast. Our challenge to you is to create a short form for a production team to fill in with information about their programme or podcast (known as a Proposal).
 
+## Install
+
+Install the NPM (Node Package Manager) packages when the repository has been cloned.
+
+```
+$ npm install
+```
+
+## Run Build
+
+```
+$ npm run start
+```
+
 ## The task
 
 Using the barebones app found in the `/src` folder, create a page that will allow a user to input the below information, and then display a confirmation message when they click the submit button. Instead of having the data sent to an API, simply have it printed in the console. We have put together some basic components that loosely follow the design language we use internally. These can be found in `/src/components`.
