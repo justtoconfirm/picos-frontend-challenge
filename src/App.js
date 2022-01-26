@@ -10,7 +10,10 @@ const App = () => {
 			<main role="main">
 				
 				<div className="form">
-					<ProposalForm />
+					<ProposalForm 
+						formTitle="Picos"
+						formCopy="Enter information to select radio programmes and podcasts for broadcast."
+					/>
 				</div>
 
 			</main>

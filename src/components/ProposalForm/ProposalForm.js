@@ -62,7 +62,7 @@ const intendedNetwork = [
 	},
 ];
 
-const ProposalForm = () => {
+const ProposalForm = ({ formTitle, formCopy }) => {
 
 	const [formData, setFormData] = useState("");
 	const [showSuccess, setSuccess] = useState(false);
@@ -137,6 +137,11 @@ const ProposalForm = () => {
 
 		<>
 			<div className="form-proposal form-proposal--align-center">
+
+				<h1>{formTitle}</h1>
+				
+				<p>{formCopy}</p>
+
 				<form>
 					<TextField
 						label="Proposal title"
