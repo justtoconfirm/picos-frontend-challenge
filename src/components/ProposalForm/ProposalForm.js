@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import TextField from "./../TextField/TextField";
 import TextArea from "./../TextArea/TextArea";
 import Dropdown from "./../Dropdown/Dropdown";
@@ -202,6 +203,11 @@ const ProposalForm = ({ formTitle, formCopy }) => {
 		</>
 
 	);
+};
+
+ProposalForm.propTypes = {
+    formTitle: PropTypes.string,
+    formCopy: PropTypes.string,
 };
 
 export default ProposalForm;

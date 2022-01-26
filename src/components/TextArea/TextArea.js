@@ -1,4 +1,5 @@
 import React, { useCallback } from "react";
+import PropTypes from "prop-types";
 import Message from "../Message/Message";
 
 import "./TextArea.css";
@@ -35,6 +36,17 @@ const TextArea = ({
             {message && <Message message={message} />}
         </div>
     );
+};
+
+TextArea.propTypes = {
+    label: PropTypes.string,
+    rows: PropTypes.number,
+    value: PropTypes.string,
+    name: PropTypes.string,
+    onChange: PropTypes.func,
+    placeholder: PropTypes.string,
+    disabled: PropTypes.bool,
+    message: PropTypes.string
 };
 
 export default TextArea;

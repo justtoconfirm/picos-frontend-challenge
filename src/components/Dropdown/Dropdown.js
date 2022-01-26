@@ -1,4 +1,5 @@
 import React, { useCallback } from "react";
+import PropTypes from "prop-types";
 
 import "./Dropdown.css";
 
@@ -40,6 +41,16 @@ const Dropdown = ({
             </select>
         </div>
     );
+};
+
+Dropdown.propTypes = {
+    label: PropTypes.string,
+    options: PropTypes.string,
+    value: PropTypes.string,
+    name: PropTypes.string,
+    onChange: PropTypes.func,
+    isClearable: PropTypes.bool,
+    disabled: PropTypes.bool
 };
 
 export default Dropdown;

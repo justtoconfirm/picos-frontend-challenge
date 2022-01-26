@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./Button.css";
 
@@ -28,6 +29,14 @@ const Button = props => {
 		isAnchorLink ? renderAsLink() : renderAsButton()
 
 	);
+};
+
+Button.propTypes = {
+    type: PropTypes.string,
+    onClick: PropTypes.func,
+    children: PropTypes.string,
+    url: PropTypes.string,
+    disabled: PropTypes.bool,
 };
 
 export default Button;

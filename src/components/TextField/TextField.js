@@ -1,4 +1,5 @@
 import React, { useCallback } from "react";
+import PropTypes from "prop-types";
 import Message from "../Message/Message";
 
 import "./TextField.css";
@@ -35,6 +36,17 @@ const TextField = ({
             {message && <Message message={message} />}
         </div>
     );
+};
+
+TextField.propTypes = {
+    label: PropTypes.string,
+    value: PropTypes.string,
+    name: PropTypes.string,
+    type: PropTypes.string,
+    onChange: PropTypes.func,
+    placeholder: PropTypes.string,
+    disabled: PropTypes.bool,
+    message: PropTypes.string
 };
 
 export default TextField;
